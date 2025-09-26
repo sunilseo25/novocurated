@@ -125,7 +125,7 @@
             {%- endfor -%}
           </ul>
           <div class="hc-image-wrapper">
-            <img class="hc-nav-image" src="{{ link.title | replace: ' ', '_' | append: '.png' | file_img_url: 'master' }}" onerror="this.style.display='none'">
+            <img class="hc-nav-image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-li="st" d-src="{{ link.title | replace: ' ', '_' | append: '.png' | file_img_url: 'master' }}" onerror="this.style.display='none'">
           </div>
         </div>
       {%- endif -%}

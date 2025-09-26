@@ -89,11 +89,19 @@ Snippet Arguments
     >
     {%- for item in items -%}
       {%- if item.object_type == 'product' -%}
-        {%- render 'product-grid-item',
+        {% if forloop.first %}
+        {%- render 'pre-product-grid-item',
           product: item,
           per_row: per_row,
           quick_shop_enable: quick_shop_enable
         -%}
+        {% else %}
+           {%- render 'product-grid-item',
+          product: item,
+          per_row: per_row,
+          quick_shop_enable: quick_shop_enable
+        -%}
+           {% endif %}
       {%- else -%}
         {%- render 'search-grid-item',
           item: item,

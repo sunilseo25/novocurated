@@ -87,7 +87,7 @@
           assign zoom_img_url = media.preview_image | img_url: product_zoom_size
         -%}
 
-        <img class="{% if product_zoom_enable %}photoswipe__image{% endif %} lazyload"
+          {% comment %} <img class="{% if product_zoom_enable %}photoswipe__image{% endif %} lazyload"
           data-photoswipe-src="{{ zoom_img_url }}"
           data-photoswipe-width="{{ media_width }}"
           data-photoswipe-height="{{ media_height }}"
@@ -96,8 +96,15 @@
           data-widths="[360, 540, 720, 900, 1080]"
           data-aspectratio="{{ media_aspect_ratio }}"
           data-sizes="auto"
-          alt="{{ media.alt | escape | split: '#' | first }}">
+          alt="{{ media.alt | escape | split: '#' | first }}"> {% endcomment %}
+          {% if is_featured %}
+            {{ media | image_url: width: media_width | image_tag: widths: '360, 540, 720, 900, 1080', alt: media.alt, class:"photoswipe__image", height: height }}
+          {% else %}
+            {{ media | image_url: width: media_width | image_tag: widths: '360, 540, 720, 900, 1080', alt: media.alt, class:"photoswipe__image", height: height | replace: ' src="' , ' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-li="st" d-src="' | replace: ' srcset="' , ' dt="' }}
+          {% endif %}
+          
 
+        
         <noscript>
           <img class="lazyloaded"
             src="{{ media | img_url: '1400x' }}"

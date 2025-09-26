@@ -3450,14 +3450,14 @@ input[type=image]{
 
 select{
   background-position:100%;
-  background-image:url(//novocurated.com/cdn/shop/t/26/assets/ico-select.svg);
+  background-image:url(//novocurated.com/cdn/shop/t/38/assets/ico-select.svg);
   background-repeat:no-repeat;
   background-position:right 10px center;
   background-size:11px
 }
 
 .is-light select{
-    background-image:url(//novocurated.com/cdn/shop/t/26/assets/ico-select-white.svg)
+    background-image:url(//novocurated.com/cdn/shop/t/38/assets/ico-select-white.svg)
 }
 
 .faux-select .icon{
@@ -4713,7 +4713,7 @@ form+.footer__social{
     }
 
 .site-footer select{
-    background-image:url(//novocurated.com/cdn/shop/t/26/assets/ico-select-footer.svg);
+    background-image:url(//novocurated.com/cdn/shop/t/38/assets/ico-select-footer.svg);
   }
 
 [data-center-text=true] .payment-icons{
